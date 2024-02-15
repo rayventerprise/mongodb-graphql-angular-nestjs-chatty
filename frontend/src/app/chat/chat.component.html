@@ -1,0 +1,15 @@
+<p>chat works!</p>
+
+<div *ngIf="chat">
+  Title: {{chat.title}}
+</div>
+
+<div>
+
+  <mat-form-field>
+    <mat-label>Message</mat-label>
+    <input matInput [(ngModel)]="messageText" placeholder="Type a message here...">
+  </mat-form-field>
+
+  <button mat-button mat-raised-button (click)="createMessage()">Send</button>
+</div>

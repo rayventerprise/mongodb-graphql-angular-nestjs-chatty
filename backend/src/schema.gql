@@ -1,0 +1,30 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Chat {
+  _id: String!
+  author: String!
+  publishedDate: Boolean!
+  title: String!
+}
+
+type Message {
+  _id: String!
+  author: String!
+  chatId: String!
+  createdAt: Float!
+  text: String!
+}
+
+type Mutation {
+  createChat(author: String!, title: String!): Chat!
+  createMessage(author: String!, chatId: String!, text: String!): Message!
+}
+
+type Query {
+  chat(id: ID!): Chat!
+  chats: [Chat!]!
+  message(id: ID!): Message!
+  messages(chatId: ID!): [Message!]!
+}

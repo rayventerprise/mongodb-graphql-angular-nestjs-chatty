@@ -1,0 +1,14 @@
+<mat-list>
+  <mat-list-item *ngFor="let chat of chats">
+    <a [routerLink]="['/chat', chat._id]">
+      <button mat-raised-button color="primary">
+        {{chat.title}}
+      </button>
+    </a>
+  </mat-list-item>
+  <mat-list-item>
+    <button mat-raised-button style="background:rgb(220,220,220);" (click)="createChat()">
+      Create Chat
+    </button>
+  </mat-list-item>
+</mat-list>
