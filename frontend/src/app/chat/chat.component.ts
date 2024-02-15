@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Apollo, gql} from "apollo-angular";
 import {ActivatedRoute} from "@angular/router";
-import {Chat} from "../../../types";
+import {Chat, Message} from "../../../types";
 import {NgIf} from "@angular/common";
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {FormsModule} from "@angular/forms";
@@ -35,12 +35,10 @@ export class ChatComponent {
   chatId: string = '';
   chat: Chat|null = null;
   messageText: string = '';
-  messages: any[] = [];
-
+  messages: Message[] = [];
   constructor(private apollo: Apollo, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.params.subscribe(({id}) => this.loadChat(id));
   }
-
   loadChat(chatId: string): void {
     this.chatId = chatId;
 
